@@ -4,11 +4,13 @@ import com.fufu.loan.enums.LoanStatus;
 import lombok.Builder;
 import lombok.Data;
 
+import java.math.BigInteger;
+
 @Data
 @Builder
 public class LoanResponse {
 
     private LoanStatus status;
 
-    private Long amount;
+    private BigInteger amount;
 }

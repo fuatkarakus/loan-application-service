@@ -9,7 +9,7 @@ import java.lang.annotation.*;
 @Documented
 @Constraint(validatedBy = { TCKNValidator.class })
 public @interface TCKN {
-    String message() default "Incorrect id";
+    String message() default "Please provide a valid id";
 
     Class<?>[] groups() default {};
 

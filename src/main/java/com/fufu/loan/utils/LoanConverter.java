@@ -3,6 +3,7 @@ package com.fufu.loan.utils;
 import com.fufu.loan.domain.LoanApplicant;
 import com.fufu.loan.payload.LoanRequest;
 
+import java.math.BigInteger;
 import java.util.Optional;
 
 public class LoanConverter {
@@ -14,7 +15,7 @@ public class LoanConverter {
                 .id(loan.getId())
                 .name(loan.getName())
                 .surname(loan.getSurname())
-                .monthlySalary(Long.parseLong(loan.getMonthlySalary()))
+                .monthlySalary(new BigInteger(loan.getMonthlySalary()))
                 .phoneNumber(loan.getPhoneNumber()))
                 .orElseGet(LoanApplicant::builder);
     }

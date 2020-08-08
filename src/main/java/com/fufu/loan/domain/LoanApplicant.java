@@ -8,6 +8,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.math.BigInteger;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -24,7 +26,7 @@ public class LoanApplicant {
     @Indexed
     private String surname;
 
-    private Long monthlySalary;
+    private BigInteger monthlySalary;
 
     private String phoneNumber;
 
