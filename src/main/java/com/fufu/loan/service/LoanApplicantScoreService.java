@@ -2,7 +2,12 @@ package com.fufu.loan.service;
 
 import com.fufu.loan.domain.LoanApplicantScore;
 import com.fufu.loan.repository.LoanApplicantScoreRepository;
+import com.fufu.loan.util.Utils;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class LoanApplicantScoreService implements ILoanApplicantScoreService{
@@ -20,6 +25,12 @@ public class LoanApplicantScoreService implements ILoanApplicantScoreService{
                         .id(id)
                         .score(0)
                         .build());
+    }
+
+    @EventListener(ApplicationReadyEvent.class)
+    public void initScoreData() {
+        List<LoanApplicantScore> scoreList =  Utils.getInitialScoreData();
+        scoreRepository.saveAll(scoreList);
     }
 
 }

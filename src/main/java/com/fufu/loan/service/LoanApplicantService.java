@@ -5,13 +5,13 @@ import com.fufu.loan.domain.LoanApplicantScore;
 import com.fufu.loan.payload.LoanRequest;
 import com.fufu.loan.payload.LoanResponse;
 import com.fufu.loan.repository.LoanApplicantRepository;
-import com.fufu.loan.utils.LoanConverter;
+import com.fufu.loan.util.LoanConverter;
 import org.springframework.stereotype.Service;
 
 @Service
 public class LoanApplicantService implements ILoanApplicantService{
 
-    private final LoanApplicantRepository loanApplicantRepository;
+    private LoanApplicantRepository loanApplicantRepository;
 
     private final LoanApplicantScoreService scoreService;
 

@@ -1,4 +1,4 @@
-package com.fufu.loan.utils;
+package com.fufu.loan.util;
 
 import com.fufu.loan.domain.LoanApplicant;
 import com.fufu.loan.payload.LoanRequest;

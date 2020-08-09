@@ -27,7 +27,6 @@ public class LoanStrategy {
                     .amount(salary
                             .multiply(BigInteger
                                     .valueOf(LoanConstant.LIMIT_MULTIPLIER)))
-
                     .status(LoanStatus.APPROVED)
                     .build();
 
