@@ -10,8 +10,10 @@ import com.fufu.loan.repository.LoanApplicantResultRepository;
 import com.fufu.loan.strategy.LoanStrategy;
 import com.fufu.loan.strategy.LoanStrategyFactory;
 import com.fufu.loan.util.LoanConverter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class LoanApplicantService implements ILoanApplicantService{
 
