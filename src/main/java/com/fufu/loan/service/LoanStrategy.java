@@ -24,9 +24,7 @@ public class LoanStrategy {
         } else if(LoanRange.HIGH.contains(score)) {
 
             return LoanResponse.builder()
-                    .amount(salary
-                            .multiply(BigInteger
-                                    .valueOf(LoanConstant.LIMIT_MULTIPLIER)))
+                    .amount(multiply(salary))
                     .status(LoanStatus.APPROVED)
                     .build();
 
@@ -39,6 +37,10 @@ public class LoanStrategy {
 
         }
 
+    }
+
+    private static BigInteger multiply(BigInteger bg) {
+        return bg.multiply(BigInteger.valueOf(LoanConstant.LIMIT_MULTIPLIER));
     }
 
 
