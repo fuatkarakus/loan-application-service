@@ -1,8 +1,6 @@
 package com.fufu.loan.util;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fufu.loan.domain.LoanApplicant;
 import com.fufu.loan.domain.LoanApplicantScore;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.ResourceUtils;

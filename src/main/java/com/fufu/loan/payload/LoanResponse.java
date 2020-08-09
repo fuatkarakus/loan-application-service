@@ -1,6 +1,5 @@
 package com.fufu.loan.payload;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fufu.loan.enums.LoanStatus;
 import lombok.Builder;
 import lombok.Data;
