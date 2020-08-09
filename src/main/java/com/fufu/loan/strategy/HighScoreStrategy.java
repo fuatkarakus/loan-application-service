@@ -13,6 +13,7 @@ public class HighScoreStrategy implements LoanStrategy{
     @Override
     public LoanApplicantResult execute(LoanApplicantScore score, LoanApplicant applicant) {
         return LoanApplicantResult.builder()
+                .id(applicant.getId())
                 .amount(multiply(applicant.getMonthlySalary()))
                 .status(LoanStatus.APPROVED)
                 .build();

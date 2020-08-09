@@ -11,6 +11,7 @@ public class MediumScoreStrategy implements LoanStrategy{
     @Override
     public LoanApplicantResult execute(LoanApplicantScore score, LoanApplicant applicant) {
         return LoanApplicantResult.builder()
+                .id(applicant.getId())
                 .amount(LoanConstant.MIN_LOAN_AMOUNT)
                 .status(LoanStatus.APPROVED)
                 .build();

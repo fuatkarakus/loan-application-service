@@ -12,6 +12,7 @@ public class LowScoreStrategy implements LoanStrategy {
     @Override
     public LoanApplicantResult execute(LoanApplicantScore score, LoanApplicant applicant) {
         return LoanApplicantResult.builder()
+                .id(applicant.getId())
                 .amount(BigInteger.ZERO)
                 .status(LoanStatus.DENIED)
                 .build();
