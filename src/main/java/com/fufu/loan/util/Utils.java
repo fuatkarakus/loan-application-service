@@ -17,9 +17,11 @@ public class Utils {
 
     private Utils() { }
 
+    private static final String INIT_SCORES = "score.json";
+
     public static List<LoanApplicantScore> getInitialScoreData() {
         try {
-            File file = ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "score.json");
+            File file = ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + INIT_SCORES);
 
             String content = new String(Files.readAllBytes(file.toPath()));
 

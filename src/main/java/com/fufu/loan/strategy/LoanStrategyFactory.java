@@ -1,7 +1,7 @@
 package com.fufu.loan.strategy;
 
-import com.fufu.loan.enums.LoanConstant;
-import com.fufu.loan.enums.LoanRange;
+import com.fufu.loan.constant.LoanConstant;
+import com.fufu.loan.constant.LoanRange;
 
 import java.math.BigInteger;
 

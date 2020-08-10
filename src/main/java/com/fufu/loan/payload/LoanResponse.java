@@ -1,6 +1,6 @@
 package com.fufu.loan.payload;
 
-import com.fufu.loan.enums.LoanStatus;
+import com.fufu.loan.constant.LoanStatus;
 import lombok.Builder;
 import lombok.Data;
 

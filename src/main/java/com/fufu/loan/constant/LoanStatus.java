@@ -1,4 +1,4 @@
-package com.fufu.loan.enums;
+package com.fufu.loan.constant;
 
 public enum LoanStatus {
     APPROVED,

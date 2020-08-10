@@ -23,34 +23,41 @@ public class LoanApplicantService implements ILoanApplicantService{
 
     private final LoanApplicantScoreService scoreService;
 
+    private final SmsService smsService;
+
     public LoanApplicantService(LoanApplicantRepository loanApplicantRepository,
                                 LoanApplicantScoreService scoreService,
-                                LoanApplicantResultRepository resultRepository){
+                                LoanApplicantResultRepository resultRepository,
+                                SmsService smsService){
         this.loanApplicantRepository = loanApplicantRepository;
         this.scoreService = scoreService;
         this.resultRepository = resultRepository;
+        this.smsService = smsService;
     }
 
     public LoanResponse process(LoanRequest request) {
-        LoanApplicant applicant = LoanConverter.convert(request).build();
+        LoanApplicant applicant = LoanConverter.convertRequest(request).build();
 
-        saveApplicant(applicant);
+        save(applicant);
 
         LoanApplicantScore applicantScore = scoreService.findApplicantScoreById(applicant.getId());
 
-        LoanStrategy strategy = LoanStrategyFactory.getStrategy(applicantScore.getScore(), applicant.getMonthlySalary());
+        LoanStrategy strategy = LoanStrategyFactory.getStrategy(applicantScore.getScore(),
+                applicant.getMonthlySalary());
 
         LoanApplicantResult result = strategy.execute(applicantScore, applicant);
 
         resultRepository.save(result);
 
-        LoanResponse response =  LoanConverter.convert(result).build();
+        LoanResponse response =  LoanConverter.convertResult(result).build();
+
+        smsService.sendSMS(applicant);
 
         return response;
 
     }
 
-    public LoanApplicant saveApplicant(LoanApplicant applicant) {
+    public LoanApplicant save(LoanApplicant applicant) {
        return loanApplicantRepository.save(applicant);
     }
 

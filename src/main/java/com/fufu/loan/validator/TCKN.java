@@ -1,4 +1,4 @@
-package com.fufu.loan.validators;
+package com.fufu.loan.validator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

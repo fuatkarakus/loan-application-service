@@ -12,7 +12,7 @@ public class LoanConverter {
 
     private LoanConverter() { }
 
-    public static LoanApplicant.LoanApplicantBuilder convert(LoanRequest loan) {
+    public static LoanApplicant.LoanApplicantBuilder convertRequest(LoanRequest loan) {
         return Optional.ofNullable(loan).map(d -> LoanApplicant.builder()
                 .id(loan.getId())
                 .name(loan.getName())
@@ -22,7 +22,7 @@ public class LoanConverter {
                 .orElseGet(LoanApplicant::builder);
     }
 
-    public static LoanResponse.LoanResponseBuilder convert(LoanApplicantResult loan) {
+    public static LoanResponse.LoanResponseBuilder convertResult(LoanApplicantResult loan) {
         return Optional.ofNullable(loan).map(d -> LoanResponse.builder()
                 .amount(loan.getAmount())
                 .status(loan.getStatus()))
