@@ -31,7 +31,8 @@ Run Docker image with
 
 ## Example
 
-`curl --location --request POST 'http://localhost:8080/api/loan' \
+``` 
+curl --location --request POST 'http://localhost:8080/api/loan' \
  --header 'Content-Type: application/json' \
  --data-raw '{
  	"id": "12312312323",
@@ -39,4 +40,5 @@ Run Docker image with
  	"surname" : "karakus",
  	"monthlySalary": "1323",
  	"phoneNumber": "5600000000"
- }'`
+ }'
+```
