@@ -19,11 +19,12 @@ class LoanConverterTest {
 
     private LoanRequest loanRequest;
     private LoanApplicantResult result;
+    private static final String ID = "11111111111";
 
     @BeforeEach
     void init(){
         loanRequest = LoanRequest.builder()
-                .id("40402015646")
+                .id(ID)
                 .monthlySalary("5000")
                 .name("fuat")
                 .surname("karakus")
@@ -31,7 +32,7 @@ class LoanConverterTest {
                 .build();
 
         result = LoanApplicantResult.builder()
-                .id("40402015646")
+                .id(ID)
                 .status(LoanStatus.APPROVED)
                 .amount(BigInteger.valueOf(10_000))
                 .build();
@@ -41,7 +42,7 @@ class LoanConverterTest {
     void whenValidRequest_thenLoanShouldConvert() {
         LoanApplicant loanApplicant = LoanConverter.convertRequest(loanRequest).build();
 
-        assertEquals("40402015646", loanApplicant.getId());
+        assertEquals(ID, loanApplicant.getId());
         assertEquals(BigInteger.valueOf(5000), loanApplicant.getMonthlySalary());
     }
 
@@ -69,7 +70,7 @@ class LoanConverterTest {
     void shouldGetInitialScore() {
         List<LoanApplicantScore> scoreData = Utils.getInitialScoreData();
 
-        LoanApplicantScore score = LoanApplicantScore.builder().id("40402015646").score(600).build();
+        LoanApplicantScore score = LoanApplicantScore.builder().id(ID).score(600).build();
 
         assertEquals(score, scoreData.get(0));
     }

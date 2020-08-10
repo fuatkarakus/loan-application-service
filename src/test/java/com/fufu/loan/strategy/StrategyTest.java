@@ -28,7 +28,7 @@ class StrategyTest {
 
     @Test
     void whenCallLowStrategy_shouldReturnDenied() {
-        LoanApplicant applicant = LoanApplicant.builder().id("4040402015646")
+        LoanApplicant applicant = LoanApplicant.builder().id("11111111111")
                 .monthlySalary(BigInteger.valueOf(1_000))
                 .build();
         LoanApplicantResult result = lowScoreStrategy.execute(null, applicant);
@@ -37,7 +37,7 @@ class StrategyTest {
 
     @Test
     void whenCallMediumStrategy_shouldReturnDenied() {
-        LoanApplicant applicant = LoanApplicant.builder().id("4040402015646")
+        LoanApplicant applicant = LoanApplicant.builder().id("11111111111")
                 .monthlySalary(BigInteger.valueOf(1_000))
                 .build();
         LoanApplicantScore score = LoanApplicantScore.builder()
@@ -50,7 +50,7 @@ class StrategyTest {
 
     @Test
     void whenCallHighStrategy_shouldReturnApproved() {
-        LoanApplicant applicant = LoanApplicant.builder().id("4040402015646")
+        LoanApplicant applicant = LoanApplicant.builder().id("11111111111")
                 .monthlySalary(BigInteger.valueOf(1_000))
                 .build();
         LoanApplicantScore score = LoanApplicantScore.builder()
