@@ -1,14 +1,15 @@
 # Loan Application Service
 
 [![Build Status](https://travis-ci.com/fuatkarakus/loan-application-service.svg?branch=master)](https://travis-ci.com/fuatkarakus/loan-application-service)
+[![Coverage Status](https://coveralls.io/repos/github/fuatkarakus/loan-application-service/badge.svg?branch=master)](https://coveralls.io/github/fuatkarakus/loan-application-service?branch=master)
 
 LoanApplicationService with Rest API written in Spring Boot
 
 ## Requirements
 
-Run MongoDb with Docker
+Mongodb
 
-`docker run -p 27017:27017 -v $HOME/docker/volumes/mongo/data:/data --name mongodb -d mongo`
+Java 11
 
 ## Quick Start
 
@@ -25,9 +26,9 @@ Check image
 
 ` docker images `
 
-Run Docker image with 
+Run
 
-` docker run --tty --publish 8080:8080 loan:0.0.1-SNAPSHOT `
+` docker-compose up `
 
 ## Example
 

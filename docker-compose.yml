@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  db:
+    image: library/mongo:latest
+    container_name: db
+    volumes:
+      - $HOME/docker/volumes/mongo/data:/data
+  loan-service:
+    image: loan:0.0.1-SNAPSHOT
+    depends_on:
+      - db
+    environment:
+      - spring.data.mongodb.uri=mongodb://db:27017/loan
+    ports:
+      - 8080:8080
+    links:
+      - db
