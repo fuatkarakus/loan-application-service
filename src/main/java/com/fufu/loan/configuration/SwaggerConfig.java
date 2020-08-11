@@ -26,7 +26,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiEndPointsInfo() {
         return new ApiInfoBuilder().title("Loan Application REST API")
-                .description("Calculation the loan limit base on credit score.")
+                .description("Calculation the loan limit based on credit score.")
                 .contact(new Contact("Fuat Karakus", "", "fuatkrks11@gmail.com"))
                 .license("Apache 2.0")
                 .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")

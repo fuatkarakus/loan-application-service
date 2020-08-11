@@ -36,21 +36,28 @@ public class LoanApplicantService implements ILoanApplicantService{
     }
 
     public LoanResponse process(LoanRequest request) {
+        // convert request to entity
         LoanApplicant applicant = LoanConverter.convertRequest(request).build();
 
+        // save request
         save(applicant);
 
+        // find score
         LoanApplicantScore applicantScore = scoreService.findApplicantScoreById(applicant.getId());
 
+        // get strategy by score
         LoanStrategy strategy = LoanStrategyFactory.getStrategy(applicantScore.getScore(),
                 applicant.getMonthlySalary());
 
+        // execute the result of application
         LoanApplicantResult result = strategy.execute(applicantScore, applicant);
 
+        // save result of application
         resultRepository.save(result);
 
         LoanResponse response =  LoanConverter.convertResult(result).build();
 
+        // send sms
         smsService.sendSMS(applicant);
 
         return response;

@@ -28,6 +28,7 @@ public class LoanController {
     public ResponseEntity<Response> applyForLoan(@Valid @RequestBody LoanRequest request) {
         Response response;
         try{
+            log.info("incoming request: {}", request.getId());
             response = Response.builder()
                     .success(Boolean.TRUE)
                     .data(loanApplicantService.process(request))
