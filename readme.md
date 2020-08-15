@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/fuatkarakus/loan-application-service.svg?branch=master)](https://travis-ci.com/fuatkarakus/loan-application-service)
 [![Coverage Status](https://coveralls.io/repos/github/fuatkarakus/loan-application-service/badge.svg?branch=master)](https://coveralls.io/github/fuatkarakus/loan-application-service?branch=master)
+[![BCH compliance](https://bettercodehub.com/edge/badge/fuatkarakus/loan-application-service?branch=master)](https://bettercodehub.com/)
 
 LoanApplicationService with Rest API written in Spring Boot
 
